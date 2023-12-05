@@ -1,5 +1,6 @@
 provider "aws" {
-     region = "us-east-1"
+    alias = "vpc"
+    region = "us-east-1"
 }
 
 resource "aws_vpc" "terraform_vpc" {
@@ -27,4 +28,15 @@ resource "aws_internet_gateway" "tf_idw" {
 resource "aws_route_table" "tf_rt" {
    vpc_id = aws_vpc.terraform_vpc.id
   
+}
+
+resource "aws_route_table_association" "tf_rta_sn1" {
+  subnet_id      = aws_subnet.sn-1.id
+  route_table_id = aws_route_table.tf_rt.id
+}
+
+resource "aws_route" "tf_rt_internet" {
+  route_table_id         = aws_route_table.tf_rt.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = aws_internet_gateway.tf_idw.id
 }
