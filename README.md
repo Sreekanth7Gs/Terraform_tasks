@@ -34,4 +34,9 @@ Task-5:
 Task-6:
 
   version-1: A Terraform file for creating IAM user and group by using varibles.tf file.
+  
+Task-7:
+
+  version-1 : A Terraform .tf file for creating object storage class in each cloud providers i.e AWS, Azure and GCP.
+
 
