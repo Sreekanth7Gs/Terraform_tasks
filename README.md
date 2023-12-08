@@ -26,3 +26,8 @@ Task-4:
 
 A Terraform .tf file for Creating the AWS Network load balancer.
 
+Task-5:
+
+  version-1: A Terraform .tf file for creating AWS IAM group with Ec2 readonly access policy defined in the variables.tf file.
+  
+
